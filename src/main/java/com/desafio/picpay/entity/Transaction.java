@@ -18,12 +18,12 @@ public class Transaction {
     private BigDecimal amount;
 
     @ManyToOne
-    @JoinColumn(name="payer_id")
-    private User payer;
+    @JoinColumn(name="sender_id")
+    private Users sender;
 
     @ManyToOne
-    @JoinColumn(name="payee_id")
-    private User payee;
+    @JoinColumn(name="receiver_id")
+    private Users receiver;
 
     private LocalDateTime timestamp;
 
@@ -43,20 +43,20 @@ public class Transaction {
         this.amount = amount;
     }
 
-    public User getPayer() {
-        return payer;
+    public Users getSender() {
+        return sender;
     }
 
-    public void setPayer(User payer) {
-        this.payer = payer;
+    public void setSender(Users sender) {
+        this.sender = sender;
     }
 
-    public User getPayee() {
-        return payee;
+    public Users getReceiver() {
+        return receiver;
     }
 
-    public void setPayee(User payee) {
-        this.payee = payee;
+    public void setReceiver(Users receiver) {
+        this.receiver = receiver;
     }
 
     public LocalDateTime getTimestamp() {
